@@ -3,7 +3,6 @@ import { Card, Col } from 'react-bootstrap';
 import FaqCard from './FaqCard';
 import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import '../css/Faq.css';
 
 
 
