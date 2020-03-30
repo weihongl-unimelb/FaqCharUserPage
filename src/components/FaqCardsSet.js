@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
-import { Card,ListGroup } from 'react-bootstrap';
+import { Card } from 'react-bootstrap';
 import FaqCard from './FaqCard';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Faq.css';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Col } from 'react-bootstrap';
 
 
 const API = 'https://ocapi20200225090922.azurewebsites.net/faq/';
@@ -44,7 +44,7 @@ class FaqCardsSet extends Component{
 
         return (
             <div className="container">
-                <div className="row">
+                <div className="row questionCardsRow">
                     {questionCard}
                 </div>
             </div>

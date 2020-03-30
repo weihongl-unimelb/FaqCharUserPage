@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import { Card,ListGroup } from 'react-bootstrap';
 import Faq from "react-faq-component";
 
 const API = 'https://ocapi20200225090922.azurewebsites.net/faq/';

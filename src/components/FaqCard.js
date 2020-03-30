@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Card,ListGroup } from 'react-bootstrap';
+import { ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 
 const API = 'https://ocapi20200225090922.azurewebsites.net/faq/';
 class FaqCard extends Component{
@@ -20,7 +21,7 @@ class FaqCard extends Component{
     render(){
         const questions = this.state.questions.map((question)=>{
             return(
-            <ListGroup.Item key={question.id}>{question.description}</ListGroup.Item>
+            <Link  to={`QuestionDetail/${question.id}`}><ListGroup.Item key={question.id}>{question.description}</ListGroup.Item></Link>
             );
         });
 
