@@ -2,7 +2,39 @@
   text-align: center;
 }
 
-.questionCardsRow{
-  margin-top: 10vh;
-  margin-bottom: 10vh;
+.questionCard{
+  margin-top: 3vh;
+  margin-bottom: 2vh;
+}
+
+.questionDetails{
+  text-align: left;
+}
+
+.topQuestions{
+  margin-top: 20vh;
+}
+
+.topicDetail, .questionDetails{
+  margin-top: 5vh;
+}
+
+.questionDetails h1{
+  font-size: 2.5rem;
+  font-weight: 900;
+  letter-spacing: 1.2px;
+  text-align: center;
+  color: #2d2d2d;
+  margin-bottom: 32px;
+  line-height: 1.285;
+}
+
+.questionDetails p{
+  margin-bottom: 1em;
+  margin-block-start: 1em;
+  margin-block-end: 1em;
+  letter-spacing: 0.6px;
+  text-align: left;
+  color: #2d2d2d;
+  font: sans-serif;
 }

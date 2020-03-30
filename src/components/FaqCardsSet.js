@@ -1,9 +1,10 @@
 import React, { Component } from 'react';
-import { Card } from 'react-bootstrap';
+import { Card, Col } from 'react-bootstrap';
 import FaqCard from './FaqCard';
+import { Link } from 'react-router-dom';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import '../css/Faq.css';
-import { Col } from 'react-bootstrap';
+
 
 
 const API = 'https://ocapi20200225090922.azurewebsites.net/faq/';
@@ -30,9 +31,9 @@ class FaqCardsSet extends Component{
 
         const questionCard = this.state.topics.map((topic)=>{
             return (
-                <Col xs={12} md={4} key={topic.id}>
+                <Col xs={12} md={6} lg={4} key={topic.id} className="questionCard">
                     <Card style={{ width: '22rem' }} key={topic.id}>
-                        <Card.Header>{ topic.name }</Card.Header>
+                        <Link to={`/TopicDetail/${topic.id}/${topic.name}`}><Card.Header><img src={topic.icon.url} align="left" />{ topic.name }</Card.Header></Link>
                         <FaqCard topicId={topic.id}/>
                     </Card>
                 </Col>
@@ -44,7 +45,7 @@ class FaqCardsSet extends Component{
 
         return (
             <div className="container">
-                <div className="row questionCardsRow">
+                <div className="row">
                     {questionCard}
                 </div>
             </div>

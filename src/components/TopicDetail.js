@@ -8,16 +8,16 @@ class QuestionDetail extends Component{
     constructor(props){
         super(props);
         this.state={
-            questionItem:{},
+            questionItems:[],
             topics: [],
         }
     }
 
     componentDidMount() {
-        const QUERY = 'questions/' + this.props.match.params.id;
+        const QUERY = 'questionTopics/' + this.props.match.params.id + '/topQuestions/50';
         fetch(API + QUERY)
           .then(response => response.json())
-          .then(data => this.setState({questionItem: data}));
+          .then(data => this.setState({questionItems: data}));
 
         fetch(API + 'questionTopics')
         .then(response => response.json())
@@ -25,6 +25,12 @@ class QuestionDetail extends Component{
     }
 
     render(){
+        
+        const questions = this.state.questionItems.map((question)=>{
+            return(
+                <Link  to={`/QuestionDetail/${question.id}`}><ListGroup.Item key={question.id}>{question.description}</ListGroup.Item></Link>
+            );
+        });
 
         const topics = this.state.topics.map((topic)=>{
             return(
@@ -32,16 +38,18 @@ class QuestionDetail extends Component{
             ) 
         });
 
-        console.log(this.state.questionItem);
         return(
-            <div className="questionDetails">
+            <div className="topicDetail">
                 <Container>
-                    <Row>
+                    <Row className="topicDetailRow">
                         <Col xs={12} md={7}>
-                        <h1>{this.state.questionItem.description}</h1>
-                        <div dangerouslySetInnerHTML={{__html:this.state.questionItem.content}} className="questionContent"></div>
-                        <div dangerouslySetInnerHTML={{__html:this.state.questionItem.answer}} className="questionAnswer"></div>
-                        <div dangerouslySetInnerHTML={{__html:this.state.questionItem.updateTime}} className="questionUpdateTime"></div>
+                            <Card style={{ width: '45rem'}} >
+                            <Card.Header>{ this.props.match.params.name }</Card.Header>
+                            <ListGroup variant="flush" style={{textAlign:"left"}}>
+                                <ListGroup.Item style={{fontSize:"0.9rem"}}>{this.state.questionItems.length} FAQS</ListGroup.Item>
+                                {questions}
+                            </ListGroup>
+                            </Card>
                         </Col>
 
                     

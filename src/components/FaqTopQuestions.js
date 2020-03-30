@@ -38,7 +38,7 @@ class FaqTopQuestions extends Component{
         };
 
         return (
-            <div>
+            <div className="topQuestions">
                 {questionsSet}
                 <Faq data={data} styles={styles} />
             </div>
