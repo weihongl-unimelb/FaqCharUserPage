@@ -21,7 +21,7 @@ class FaqCard extends Component{
     render(){
         const questions = this.state.questions.map((question)=>{
             return(
-            <Link  to={`/QuestionDetail/${question.id}`}><ListGroup.Item key={question.id}>{question.description}</ListGroup.Item></Link>
+            <Link key={question.id} to={`/QuestionDetail/${question.id}`}><ListGroup.Item>{question.description}</ListGroup.Item></Link>
             );
         });
 

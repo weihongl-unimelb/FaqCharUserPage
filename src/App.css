@@ -1,10 +1,21 @@
 .App {
   text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  color: #2d2d2d;
 }
 
 .questionCard{
-  margin-top: 3vh;
-  margin-bottom: 2vh;
+  text-align: left;
+}
+
+
+.card-header{
+  text-align: center;
+  color: #2d2d2d;
+}
+
+.list-group-item{
+  color: #2d2d2d;
 }
 
 .questionDetails{
@@ -38,3 +49,39 @@
   color: #2d2d2d;
   font: sans-serif;
 }
+
+.viewAll {
+  color: #666666;
+  text-decoration: none;
+  letter-spacing: 0.4px;
+  vertical-align: baseline;
+  font-weight: bold;
+}
+
+
+.topQuestions h2{
+  margin-bottom: 3vh;
+}
+
+.topQuestions i.fa{
+  float: right;
+}
+
+
+.topQuestions .list-group-item{
+  padding: 4vh;
+  letter-spacing: 0.4px;
+  line-height: 1.38;
+  text-align: left;
+  font-size: 0.9rem;
+  text-decoration: none;
+}
+
+.topQuestions .list-group-item:hover{
+  font-weight: bold;
+}
+
+.questionCard{
+  margin: 3.5vh 0;
+}
+

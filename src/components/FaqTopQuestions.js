@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
-import Faq from "react-faq-component";
+import { ListGroup } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
+import '../src/TopQuestions.css';
 
 const API = 'https://ocapi20200225090922.azurewebsites.net/faq/';
 const QUERY = 'Questions/top/6';
@@ -21,28 +23,31 @@ class FaqTopQuestions extends Component{
     
 
     render(){
-        const data = {title:"POPULAR FAQS", rows:[]};
-        const questionsSet = this.state.questions.map((question)=>{
-            data.rows.push({
-                title: question.content,
-                content: question.answer
-            })
-            return(null);
+        const questionItems = this.state.questions.map((question)=>{
+            return (
+                <Link  key={question.id} to={`/QuestionDetail/${question.id}`} style={styles.link}>
+                    <ListGroup.Item>{question.content} <i className="fa fa-chevron-right"></i> </ListGroup.Item>
+                </Link>
+            );
         });
-        const styles = {
-            // bgColor: 'white',
-            // titleTextColor: "blue",
-            // rowTitleColor: "blue",
-            rowContentColor: 'grey',
-            // arrowColor: "red",
-        };
 
-        return (
+        return(
             <div className="topQuestions">
-                {questionsSet}
-                <Faq data={data} styles={styles} />
+                <h2>POPULAR FAQS</h2>
+                <ListGroup >
+                    {questionItems}
+                </ListGroup>
             </div>
         );
-    }
+    } 
 }
+const styles = {
+    link: {
+      color: "white",
+      ":hover": {
+        textDecoration: "none",
+      },
+    },
+  };
+
 export default FaqTopQuestions;
