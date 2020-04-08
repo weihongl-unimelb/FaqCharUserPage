@@ -50,13 +50,7 @@
   font: sans-serif;
 }
 
-.viewAll {
-  color: #666666;
-  text-decoration: none;
-  letter-spacing: 0.4px;
-  vertical-align: baseline;
-  font-weight: bold;
-}
+
 
 
 .topQuestions h2{
@@ -85,3 +79,28 @@
   margin: 3.5vh 0;
 }
 
+.questionCard .list-group-item{
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow:  20px 20px 60px #d9d9d9, 
+               -20px -20px 60px #ffffff;
+}
+
+.questionCard .list-group-item:hover{
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  20px 20px 60px #d9d9d9, 
+               -20px -20px 60px #ffffff;
+}
+
+.topQuestions .list-group-item{
+  border-radius: 8px;
+background: #ffffff;
+box-shadow:  20px 20px 60px #d9d9d9, 
+             -20px -20px 60px #ffffff;
+}
+
+.topQuestions .list-group-item:hover{
+  background: linear-gradient(145deg, #e6e6e6, #ffffff);
+  box-shadow:  20px 20px 60px #d9d9d9, 
+               -20px -20px 60px #ffffff;
+}
