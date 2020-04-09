@@ -25,8 +25,18 @@ class QuestionDetail extends Component{
         .then(data => this.setState({topics: data}));
     }
 
-    render(){
+    componentWillReceiveProps(nextProps){
+        const QUERY = 'questionTopics/' + nextProps.match.params.id + '/topQuestions/50';
         
+        fetch(API + QUERY)
+          .then(response => response.json())
+          .then(data => {if(data != this.state.questionItems){
+              this.setState({questionItems: data})
+            }});
+    }
+
+    render(){
+        console.log(this.state);
         const questions = this.state.questionItems.map((question)=>{
             return(
                 <Link  to={`/QuestionDetail/${question.id}`}><ListGroup.Item key={question.id}>{question.description}</ListGroup.Item></Link>
