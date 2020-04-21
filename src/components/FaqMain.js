@@ -1,7 +1,7 @@
 import React from 'react';
 import FaqCardsSet from './FaqCardsSet';
 import FaqTopQuestions from './FaqTopQuestions';
-import { Container, Row, Col } from 'react-bootstrap';
+import { Container, Row} from 'react-bootstrap';
 
 
 function FaqMain() {

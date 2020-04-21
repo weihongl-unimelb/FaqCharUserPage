@@ -12,6 +12,9 @@
 .card-header{
   text-align: center;
   color: #2d2d2d;
+  letter-spacing: 0.4px;
+  font-size: 0.8rem;
+  background-color: #ffffff;
 }
 
 .list-group-item{
@@ -67,7 +70,7 @@
   letter-spacing: 0.4px;
   line-height: 1.38;
   text-align: left;
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-decoration: none;
 }
 
@@ -80,9 +83,15 @@
 }
 
 .questionCard .list-group-item{
-  border-radius: 8px;
-  background: #ffffff;
-  box-shadow:  10px 10px 30px #d9d9d9, -0px -0px 0px #ffffff;
+  display: flex;
+  color: #2d2d2d;
+  text-decoration: none;
+  padding-top: 1.5vh;
+  padding-bottom: 1.2vh;
+  display: block;
+  line-height: 1.5vh;
+  letter-spacing: 0.4px;
+  min-height: 6vh;
 }
 
 /* .questionCard .list-group-item:hover{
@@ -102,3 +111,25 @@ box-shadow:  10px 10px 30px #d9d9d9, -0px -0px 0px #ffffff;
   box-shadow:  20px 20px 60px #d9d9d9, 
                -20px -20px 60px #ffffff;
 } */
+
+.card .viewAll{
+  display: block;
+  color: #666666;
+  line-height: 1.38;
+  letter-spacing: 0.4px;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.topicImg{
+  display: inline-flex;
+  float: left;
+  width: 5vh;
+  height: 4vh;
+}
+
+.refill{
+  min-height: 6vh;
+}
+
+

@@ -17,12 +17,25 @@ class FaqCard extends Component{
         .then(response => response.json())
         .then(data => this.setState({questions: data}));
     }
+
+    refill(){
+        while(this.state.questions.length!=3){
+            this.state.questions.push({});
+            console.log(this.state.questions);
+        }
+    }
+
     
     render(){
+        this.refill();
         const questions = this.state.questions.map((question)=>{
-            return(
-            <Link key={question.id} to={`/QuestionDetail/${question.id}`}><ListGroup.Item>{question.description}</ListGroup.Item></Link>
-            );
+            if(question.description){
+                return(
+                    <Link key={question.id} to={`/QuestionDetail/${question.id}`}><ListGroup.Item>{question.description}</ListGroup.Item></Link>
+                );}
+            else{
+                return(<div className="refill">{` `}</div>);
+            }
         });
 
         return(
